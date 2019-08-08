@@ -1,0 +1,16 @@
+{{ $date := .Date.Format "2006-01-02 15:04" }}
+  {{ $author := cond (isset $.Params "author") $.Params.author "unknown" }}
+  <div class="page-info">
+    <div class="page-info-text">
+      <div class="page-info-line1">
+        <div class="date">{{ $date }}</div>
+      </div>
+      <div class="page-info-line2">
+        {{if $.Params.tags}}
+          {{ $sort := sort $.Params.tags }}
+          <i class="fas fa-tags"></i>
+          {{ range $i, $e := $sort }}{{ if $i }}, {{ end }}<a href="{{ $.Site.BaseURL }}tags/{{ $e | urlize | lower  }}">{{ $e }}</a>{{end}}
+        {{end}}
+      </div>
+    </div>
+  </div>

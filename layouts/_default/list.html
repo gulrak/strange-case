@@ -7,27 +7,37 @@
 			{{ partial "sidebar-content.html" . }}
 
 			</div>
-			<div class="col-sm-7 col-sm-offset-4 col-md-6 col-md-offset-3 col-lg-5 col-lg-offset-3 content">
+			<div class="col-sm-7 col-sm-offset-4 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 content">
 
-				{{ range .Paginator.Pages }}
+				{{if eq .Section "tags"}}
+					<h1>Posts for tag: {{ .Title }}</h1>
+				{{else}}
+					<h1>Pages for {{ .Title }}</h1>
+				{{end}}
+
+				{{ $paginator := .Paginate .Data.Pages }}
+				{{ range $index, $element := $paginator.Pages }}
+				{{if gt $index 0}}
+				<hr/>
+				{{end}}
 				<div class="post">
 
 					<div class="post-heading">
 						<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-						<span>{{ .Date.Format "Jan 2, 2006" }}{{ if .Params.author }} by {{ .Params.author }}{{ end }}</span>
+						{{ partial "post-info.html" . }}
+						<!--span>{{ .Date.Format "Jan 2, 2006" }}{{ if .Params.author }} by {{ .Params.author }}{{ end }}</span-->
 					</div>
 
-					{{ .Content }}
+					{{ .Summary }}
+
+					<a href='{{ $element.Permalink }}'><nobr>Read more...</nobr></a>
 
 				</div>
 				{{ end }}
-
-				<div class="text-center">
-					{{ template "_internal/pagination.html" . }}
-				</div>
+				{{ template "_internal/pagination.html" . }}
 
 			</div>
-			<div class="col-sm-1 col-md-3 col-md-4">
+			<div class="col-sm-1 col-md-3 col-lg-3">
 			</div>
 		</div>
 	</div>
