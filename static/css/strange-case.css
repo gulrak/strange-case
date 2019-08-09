@@ -62,6 +62,14 @@ img {
 		padding-left: 1em;
 	}
 }
+.content li {
+	font-size: 1.2em;
+}
+.content blockquote {
+	font-size: 1.1em;
+	border-left: 5px solid #ccc;
+}
+
 .post {
 	margin-bottom: 3em;
 }
@@ -86,6 +94,7 @@ img {
 .post .post-heading span {
 	font-size:1.4em;
 }
+
 
 
 /* SIDEBAR */
