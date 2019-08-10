@@ -72,6 +72,7 @@ img {
 
 .post {
 	margin-bottom: 3em;
+	text-align: justify; 
 }
 .post .post-heading {
 	margin-bottom: 1em;
