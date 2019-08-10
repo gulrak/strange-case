@@ -14,12 +14,19 @@
 			{{ range .Site.Menus.main }}
 				<li>&#187; <a href="{{.URL}}">{{ .Name }}</a> {{ .Post }}</li>
 			{{end}}
+			{{ if .Site.IsMultiLingual }}
+				{{ range $.Site.Home.AllTranslations }}
+					{{ if ne $.Site.Language.LanguageName .Language.LanguageName }}
+						<li>&#187; <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+					{{ end }}
+				{{ end }}
+			{{ end }}
 		</ul>
 
 		<div class="sidebar-recent hidden-xs">
-			<p>Recent Posts:</p>
+			<p>{{ i18n "recentPosts" }}</p>
 			<ul>
-				{{ range first 5 (where .Site.RegularPages "Type" "post" ) }}
+				{{ range first 5 (where .Site.RegularPages "Type" ( .Site.Params.postsName | default "posts" ) ) }}
 				<li><a href="{{.Permalink}}">{{ .Title }}</a></li>
 				{{ end }}
 			</ul>

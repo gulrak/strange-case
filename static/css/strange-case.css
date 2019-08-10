@@ -80,7 +80,7 @@ img {
 	margin-top: 1.4em;
 }
 .post h1 {
-	font-size: 2.6em;
+	font-size: 2.1em;
 	margin-bottom: 0.2em;
 	margin-top: 1em;
 	font-weight: bold;
@@ -226,6 +226,43 @@ p.attr {
 }
 .scheme-relive .post .post-heading span {
 	color: #9a9a9a;
+}
+
+/*
+	#6c6b74	grayish
+	#2e303e darker
+	#212624 darkest
+	#c8cbde lighter blue
+	#9199be light blue
+	#54678f dark blue (content links)
+*/
+.scheme-cool .sidebar {
+	background-color: #54678f;
+	color: #eee;
+}
+.scheme-cool .sidebar h1 {
+	color: #eee;
+}
+.scheme-cool .sidebar a {
+	color: #c8cbde;
+	text-decoration: none;
+}
+.scheme-cool .sidebar .sidebar-menus li a {
+	color: #c8cbde;
+	text-decoration: none;
+}
+.scheme-cool .content h1 a {
+	color: #54678f;
+}
+.scheme-cool .content a {
+	color: #9199be;
+}
+.scheme-cool .post .post-heading span {
+	color: #9199be;
+}
+.scheme-cool .content code {
+	color: #54678f;
+	background-color: #f4f4f4;
 }
 
 /*
