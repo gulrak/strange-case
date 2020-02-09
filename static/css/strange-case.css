@@ -72,7 +72,7 @@ img {
 
 .post {
 	margin-bottom: 3em;
-	text-align: justify; 
+	text-align: left; 
 }
 .post .post-heading {
 	margin-bottom: 1em;
@@ -365,3 +365,13 @@ p.attr {
 .scheme-slate .post .post-heading span {
 	color: #9a9a9a;
 }
+
+.img-float-left {
+	float: left;
+	padding: 0.7em 1em 8px 0px;
+}
+
+.img-float-right {
+	float: right;
+	padding: 0.7em 0px 8px 1em;
+}  
